@@ -1,0 +1,19 @@
+<%- include("partials/header") %>
+	<div class="container align head">
+<% blogs.forEach(blog=>{ %>
+	
+		<!-- <div class="align">	 -->
+			<div class="card mr-2" id="indexCard">
+				  <img src="<%=blog.image%>" class="card-img-top" alt="image">
+				  <div class="card-body">
+					  <span><%=blog.created.toDateString()%></span>
+					<h4 class="card-title"><%=blog.title%></h4>
+					<p class="card-text"><%-blog.body.substring(0,100)%>...	</p>
+					<a href="/blogs/<%= blog._id %>" class="btn btn-outline-dark">Read more</a>
+				  </div>
+			</div>
+		<!-- </div>	 -->
+	
+<% }) %>
+	</div>	
+<%- include("partials/footer") %>

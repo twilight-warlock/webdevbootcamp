@@ -1,0 +1,28 @@
+i.fa{
+	font-size:1.5rem;
+}
+.head{
+	padding-top:70px;
+}
+.card-body{
+	border:1px solid #ddd;
+	border-top:0;
+}
+#deleteForm{
+	display:inline;
+}
+#blogPara{
+	text-align:justify;
+}
+.align{
+	display:flex;
+	flex-wrap:wrap;
+	justify-content: space-between;
+}
+#indexCard{
+	width:30%;
+	margin-top:20px;
+}
+#indexCard img{
+	height:200px;
+}

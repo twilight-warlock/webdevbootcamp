@@ -1,0 +1,13 @@
+<h1>
+	Search Results
+</h1>
+<h2>
+	<% data.Search.forEach(movie=>{ %>
+		
+		<li style="padding:10px 5px">
+			<img src="<%= movie.Poster%>" style="width:80px"/>	<%=movie.Title %> - <%=movie.Year%>
+			
+		</li>
+	<% }) %>
+</h2>
+<a href="/">Search Again?</a>

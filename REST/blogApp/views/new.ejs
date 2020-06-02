@@ -1,0 +1,68 @@
+<%- include("partials/header") %>
+
+<div class="container">
+	<div class="row head">
+		<div class="col-sm-8 offset-sm-2">
+			<div class="card">
+				<div class="card-header text-white bg-primary">
+				  <h2>New Blog</h2>
+				</div>
+			</div>
+			
+			<div class="card-body">
+				<form action="/blogs" method="POST">
+					<div class="form-group row">
+						<label class="col-md-2 col-form-label">
+							Title :
+						</label>
+						<div class="col-12 col-md-10">
+							<input
+							  type="text"
+							  name="blog[title]"
+							  class="form-control"
+							  id="title"
+							  placeholder="Title"
+							/>
+						</div>
+					</div>
+					<div class="form-group row">
+						<label class="col-md-2 col-form-label">
+							Image URL :
+						</label>
+						<div class="col-12 col-md-10">
+							<input
+							  type="text"
+							  name="blog[image]"
+							  class="form-control"
+							  id="image"
+							  placeholder="URL"
+							/>
+						</div>
+					</div>
+					<div class="form-group row">
+						<label class="col-md-2 col-form-label">
+							Blog Content :
+						</label>
+						<div class="col-12 col-md-10">
+							<textarea
+								name="blog[body]"
+								class="form-control"
+								rows="5"	
+								required
+							  /></textarea>
+						</div>
+					</div>
+				
+					<div class="form-group row">
+					  <div class="offset-md-2 col-md-10">
+						<input type="submit" class="btn btn-primary btn-lg">
+					  </div>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+	
+</div>
+
+<%- include("partials/footer") %>
