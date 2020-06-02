@@ -42,7 +42,14 @@ passport.deserializeUser(User.deserializeUser());
 
 mongoose.set('useUnifiedTopology', true);
 // Connecting to the database
-mongoose.connect("mongodb://localhost:27017/yelpcamp",{useNewUrlParser: true });
+mongoose.connect("mongodb+srv://warlock:abcd1234@cluster0-gjwuz.mongodb.net/test?retryWrites=true&w=majority",{
+	useNewUrlParser:true,
+	useCreateIndex:true,
+}).then(()=>{
+	console.log("Connected to DB");
+}).catch(err=>{
+	console.log(err.message);
+})
 
 // Converting form data
 app.use(bodyParser.urlencoded({extended:true}));
@@ -61,6 +68,4 @@ app.use("/campgrounds",campgroundRoutes);
 app.use("/campgrounds/:id/comments",commentRoutes);
 
 // Making a server
-app.listen(3000,function(){
-	console.log("Server started at port 3000");
-})
+app.listen(process.env.PORT,process.env.IP);
