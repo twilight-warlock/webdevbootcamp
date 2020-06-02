@@ -42,7 +42,8 @@ passport.deserializeUser(User.deserializeUser());
 
 mongoose.set('useUnifiedTopology', true);
 // Connecting to the database
-mongoose.connect("mongodb+srv://warlock:abcd1234@cluster0-gjwuz.mongodb.net/test?retryWrites=true&w=majority",{
+var url = process.env.DATABASEURL || "mogodb://localhost:27017/yelpcamp";
+mongoose.connect(url,{
 	useNewUrlParser:true,
 	useCreateIndex:true,
 }).then(()=>{
